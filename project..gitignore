@@ -1,0 +1,5 @@
+# Ignore files
+uploads/
+*.log
+*.tmp
+.DS_Store

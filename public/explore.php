@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rentaly</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <style>
+      body {
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif; /* Modern font for professional look */
+    background-color: #f9fafb; /* Light background for better readability */
+    color: #333;
+    box-sizing: border-box;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: linear-gradient(90deg, #1e3a8a, black); /* Gradient for a premium look */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .navbar .logo p {
+    
+    color: black; 
+    font-variant: normal;
+    font-size:larger;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 1000;
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  .navbar .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navbar a {
+    color: #f3f4f6; /* Soft white for links */
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Subtle hover effect */
+    color: #fff;
+  }
+  
+  .navbar .sign-in {
+    background-color: #10b981; /* Vibrant green button */
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px rgba(16, 185, 129, 0.4);
+    transition: all 0.3s ease;
+  }
+  
+  .navbar .sign-in:hover {
+    background-color: black; /* Slightly darker green on hover */
+    box-shadow: 0 6px 12px rgba(5, 150, 105, 0.5);
+    transform: translateY(-2px);
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 10px 20px;
+    }
+  
+    .navbar .nav-links {
+      display: none; /* Navigation links hidden on mobile */
+    }
+  
+    .navbar .menu-toggle {
+      display: block;
+      font-size: 24px;
+      color: #f3f4f6;
+      cursor: pointer;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .navbar .menu-toggle {
+      display: none;
+    }
+  }
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  background-image: url("../public/theme2.jpeg"); /* Adjust path */
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.7);
+}
+  
+  .hero .text {
+    background: rgba(0, 0, 0, 0.7); /* Darker overlay for improved contrast */
+    padding: 30px 40px;
+    border-radius: 15px; /* Smoother rounded corners */
+    animation: fadeIn 1.5s ease-in-out; /* Subtle fade-in effect */
+  }
+  
+  .hero .text h1 {
+    font-size: 60px;
+    font-weight: 700; /* Bold and impactful title */
+    margin: 0;
+    line-height: 1.2;
+    text-transform: uppercase; /* Professional text styling */
+  }
+  
+  .hero .text p {
+    font-size: 22px;
+    margin: 20px 0;
+    font-weight: 300;
+    color: #d1d5db; /* Lighter text for a polished look */
+  }
+  
+  .hero .text .btn {
+    background: linear-gradient(90deg, #10b981, #059669); /* Gradient button */
+    padding: 12px 30px;
+    border-radius: 30px; /* Pill-shaped button */
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(16, 185, 129, 0.4); /* Elevated button */
+  }
+  
+  .hero .text .btn:hover {
+    background: linear-gradient(90deg, #059669, #065f46);
+    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.6);
+    transform: translateY(-3px);
+  }
+  
+  /* Animation for hero section fade-in */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* FLEET SECTION */
+  .fleet {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f9fafb; /* Light, clean background */
+  }
+  
+  .fleet h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1e293b; /* Dark, modern headline color */
+  }
+  
+  .fleet p {
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 50px;
+    color: #64748b; /* Soft, professional text color */
+  }
+  
+  .fleet .cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Added spacing between cards */
+  }
+  
+  .fleet .card {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    width: 300px; /* Standard card width */
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .fleet .card:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Elevated shadow on hover */
+  }
+  
+  .fleet .card h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #1e293b; /* Dark card title */
+  }
+  
+  .fleet .card p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #475569; /* Subtle card text */
+  }
+  
+  .fleet .card .btn {
+  
+    background: #2563eb; /* Professional blue button */
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  
+
+  .fleet .card {
+    background-color: #ffffff; /* Clean and professional white background */
+    border-radius: 15px; /* Smooth rounded corners */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Subtle elevation */
+    margin: 20px;
+    width: 320px; /* Slightly wider for better content spacing */
+    padding: 20px;
+    text-align: left;
+    color: #1a202c; /* Darker text for better readability */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .fleet .card:hover {
+    transform: translateY(-10px); /* Lift effect for interactivity */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+  }
+  
+  .fleet .card img {
+    width: 100%;
+    border-radius: 15px 15px 0 0; /* Rounded corners only at the top */
+    margin-bottom: 15px;
+  }
+  
+  .fleet .card h3 {
+    font-size: 22px;
+    font-weight: 600; /* Bold and clean title */
+    color: #2c3e50; /* Deep navy tone for modern design */
+    margin: 15px 0 10px;
+  }
+  
+  .fleet .card p {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 5px 0 15px;
+    color: #4a5568; /* Neutral gray for secondary text */
+  }
+  
+  .fleet .card .price {
+    font-size: 22px;
+    font-weight: 700; /* Bold price for prominence */
+    color: #10b981; /* Bright green for an inviting call-to-action */
+    margin: 10px 0;
+  }
+  
+  .fleet .card .btn {
+    background: linear-gradient(90deg, #10b981, #059669); /* Sleek green gradient */
+    padding: 12px 20px;
+    border-radius: 30px; /* Pill-shaped button for a modern look */
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+    transition:  0.3s ease, transform 0.3s ease;
+    text-align: center;
+  }
+  
+  .fleet .card .btn:hover {
+    background: linear-gradient(90deg, #059669, black); /* Slightly darker hover effect */
+    transform: translateY(-3px); /* Lift effect on hover */
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .fleet .cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .fleet .card {
+      width: 90%; /* Full width for smaller devices */
+      margin: 20px 0;
+    }
+  }
+  
+/* Container Styling */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px; /* Added consistent spacing between elements */
+  }
+  
+  /* Sidebar Styling */
+  .sidebar {
+    flex: 1;
+    max-width: 300px;
+    padding: 20px;
+    background-color: #1e1e1e; /* Darker background for better contrast */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .sidebar h3 {
+    margin-top: 0;
+    font-size: 20px;
+    border-bottom: 2px solid #28a745; /* Green underline for distinction */
+    padding-bottom: 5px;
+  }
+  
+  .sidebar label {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #d1d1d1;
+  }
+  
+  .sidebar input {
+    margin-right: 10px;
+  }
+  
+  /* Main Content Styling */
+  .main-content {
+    flex: 3;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  /* Card Styling */
+  .card {
+    background-color: #2a2a2a; /* Sleek dark card design */
+    border-radius: 15px;
+    padding: 20px;
+    width: calc(33.333% - 20px);
+    box-sizing: border-box;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Subtle elevation */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+  }
+  
+  .card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .card h4 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #fff;
+  }
+  
+  .card .details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .card .details span {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #ccc;
+  }
+  
+  .card .details span i {
+    margin-right: 5px;
+    color: #28a745;
+  }
+  
+  .card .price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #28a745;
+    margin-bottom: 10px;
+  }
+  
+  .card .btn {
+    background-color: #28a745;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px; /* Pill-shaped button */
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: 0.3s ease, transform 0.3s ease;
+  }
+  
+  .card .btn:hover {
+    background-color: #218838; /* Slightly darker green on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    .card {
+      width: calc(50% - 20px);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .card {
+      width: 100%;
+    }
+  
+    .sidebar {
+      max-width: 100%;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Main Image and Details Section */
+  .main-image {
+    flex: 1 1 60%;
+    padding: 10px;
+  }
+  
+  .main-image img {
+    width: 100%;
+    border-radius: 10px; /* Rounded corners for main image */
+    height: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for a polished look */
+  }
+  
+  .thumbnails {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .thumbnails img {
+    width: 18%;
+    height: auto;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .thumbnails img:hover {
+    transform: scale(1.05); /* Slight zoom-in on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Details Section */
+  .details {
+    flex: 1 1 40%;
+    padding: 10px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .details h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .details p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #d1d1d1;
+  }
+  
+  .specifications,
+  .features,
+  .booking,
+  .share {
+    margin-bottom: 20px;
+  }
+  
+  .specifications h2,
+  .features h2,
+  .booking h2,
+  .share h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #28a745; /* Green underline */
+    padding-bottom: 5px;
+  }
+  
+  .specifications ul,
+  .features ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .specifications ul li,
+  .features ul li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #d1d1d1;
+  }
+  
+  .features ul li i {
+    color: #28a745; /* Highlighted green icons */
+    margin-right: 10px;
+  }
+/* Container Styling */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px; /* Added consistent spacing between elements */
+  }
+  
+  /* Sidebar Styling */
+  .sidebar {
+    flex: 1;
+    max-width: 300px;
+    padding: 20px;
+    background-color: #1e1e1e; /* Darker background for better contrast */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .sidebar h3 {
+    margin-top: 0;
+    font-size: 20px;
+    border-bottom: 2px solid #28a745; /* Green underline for distinction */
+    padding-bottom: 5px;
+  }
+  
+  .sidebar label {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #d1d1d1;
+  }
+  
+  .sidebar input {
+    margin-right: 10px;
+  }
+  
+  /* Main Content Styling */
+  .main-content {
+    flex: 3;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  /* Card Styling */
+  .card {
+    background-color: #2a2a2a; /* Sleek dark card design */
+    border-radius: 15px;
+    padding: 20px;
+    width: calc(33.333% - 20px);
+    box-sizing: border-box;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Subtle elevation */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+  }
+  
+  .card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .card h4 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #fff;
+  }
+  
+  .card .details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .card .details span {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #ccc;
+  }
+  
+  .card .details span i {
+    margin-right: 5px;
+    color: #28a745;
+  }
+  
+  .card .price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #28a745;
+    margin-bottom: 10px;
+  }
+  
+  .card .btn {
+    background-color: #28a745;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px; /* Pill-shaped button */
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    transition:  0.3s ease, transform 0.3s ease;
+  }
+  
+  .card .btn:hover {
+    transition: 1s;
+    background: linear-gradient(45deg, blue, black); /* Slightly darker green on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    .card {
+      width: calc(50% - 20px);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .card {
+      width: 100%;
+    }
+  
+    .sidebar {
+      max-width: 100%;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Main Image and Details Section */
+  .main-image {
+    flex: 1 1 60%;
+    padding: 10px;
+  }
+  
+  .main-image img {
+    width: 100%;
+    border-radius: 10px; /* Rounded corners for main image */
+    height: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for a polished look */
+  }
+  
+  .thumbnails {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .thumbnails img {
+    width: 18%;
+    height: auto;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .thumbnails img:hover {
+    transform: scale(1.05); /* Slight zoom-in on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Details Section */
+  .details {
+    flex: 1 1 40%;
+    padding: 10px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .details h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .details p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #d1d1d1;
+  }
+  
+  .specifications,
+  .features,
+  .booking,
+  .share {
+    margin-bottom: 20px;
+  }
+  
+  .specifications h2,
+  .features h2,
+  .booking h2,
+  .share h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #28a745; /* Green underline */
+    padding-bottom: 5px;
+  }
+  
+  .specifications ul,
+  .features ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .specifications ul li,
+  .features ul li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #d1d1d1;
+  }
+  
+  .features ul li i {
+    color: #28a745; /* Highlighted green icons */
+    margin-right: 10px;
+  }
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+  }
+  
+  /* Offer Section */
+  .offer-section {
+    
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 5px solid #4caf50;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  .offer-section h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+  .offer-section p {
+    max-width: 650px;
+    margin: 0 auto 30px;
+    font-size: 1.1em;
+    line-height: 1.6;
+  }
+  
+  /* Stats Section */
+  .stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    flex-wrap: wrap;
+  }
+  .stats div {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    width: 21%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+  .stats div:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  }
+  .stats div h3 {
+    margin: 0;
+    font-size: 1.6em;
+    color: #4caf50;
+  }
+  .stats div p {
+    font-size: 1.1em;
+    margin: 10px 0 0;
+    color: #ddd;
+  }
+  
+  /* Header */
+  .header {
+    position: relative;
+    text-align: center;
+    color: black;
+    background-color: grey;
+  }
+  .header img {
+    width: 100%;
+    height: auto;
+  }
+  .header h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -23%);
+    font-size: 3.5em;
+    margin: 0;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  }
+  
+  /* Content Section */
+  .content {
+    padding: 4em 20px;
+    text-align: center;
+    background-color: #fff;
+  }
+  .content h2 {
+    font-size: 2.5em;
+    margin-bottom: 1.5em;
+    font-weight: bold;
+  }
+  .content p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 2.5em;
+    color: #555;
+  }
+  
+  /* Board Section */
+  .board {
+    text-align: center;
+    margin-bottom: 3em;
+  }
+  .board h2 {
+    font-size: 2.5em;
+    margin-bottom: 1.5em;
+    font-weight: bold;
+  }
+  .board .members {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .board .member {
+    width: 25%;
+    text-align: center;
+    margin-bottom: 2em;
+  }
+  .board .member img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 1s;
+  }
+  .board .member img:hover {
+    transform: scale(1.05);
+  }
+  .board .member h3 {
+    font-size: 1.3em;
+    margin: 10px 0;
+    font-weight: bold;
+  }
+  .board .member .social a {
+    color: #4caf50;
+    margin: 0 0.5em;
+    font-size: 1.3em;
+    transition: color 0.3s;
+  }
+  .board .member .social a:hover {
+    color: #333;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .stats {
+      flex-direction: column;
+      align-items: center;
+    }
+    .stats div {
+      width: 80%;
+      margin-bottom: 1em;
+    }
+    .board .members {
+      flex-direction: column;
+      align-items: center;
+    }
+    .board .member {
+      width: 80%;
+    }
+  }
+  
+  /* CTA Buttons */
+  .button {
+    display: inline-block;
+    background-color: #4caf50;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  .button:hover {
+    background-color: #45a049;
+  }
+  
+    </style>
+</head>
+  
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetchCars();
+        });
+
+        function fetchCars() {
+            fetch("http://localhost/car-website/admin/api/get.php")
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === "success") {
+                        displayCars(data.data);
+                    } else {
+                        console.error("Error fetching cars: Invalid API response", data);
+                    }
+                })
+                .catch(error => console.error("Error fetching cars:", error));
+        }
+
+        function displayCars(cars) {
+            const mainContent = document.querySelector(".main-content");
+
+            if (!mainContent) {
+                console.error("Error: .main-content not found!");
+                return;
+            }
+
+            mainContent.innerHTML = ""; // Clear existing content
+
+            cars.forEach(car => {
+                const carCard = document.createElement("div");
+                carCard.classList.add("card");
+
+                carCard.innerHTML = `
+                    <img src="${car.main_image}" alt="${car.model}">
+                    <h4>${car.model}</h4>
+                    <div class="details">
+                        <span><i class="fas fa-users"></i> ${car.seats}</span>
+                        <span><i class="fas fa-suitcase"></i> ${car.seats}</span>
+                        <span><i class="fas fa-car"></i> ${car.body_type}</span>
+                        <span><i class="fas fa-gas-pump"></i> ${car.engine_capacity}</span>
+                    </div>
+                    <div class="price">Daily rate from: Rs ${car.daily_rate}</div>
+                    <a href="booking.php" class="btn">Rent Now</a>
+                `;
+
+                mainContent.appendChild(carCard);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h3>Vehicle Type</h3>
+            <label><input type="checkbox" /> Car</label>
+            <label><input type="checkbox" /> Minibus</label>
+            <label><input type="checkbox" /> Prestige</label>
+            
+            <h3>Car Body Type</h3>
+            <label><input type="checkbox" /> Convertible</label>
+            <label><input type="checkbox" /> Coupe</label>
+            <label><input type="checkbox" /> Exotic Cars</label>
+            <label><input type="checkbox" /> Hatchback</label>
+            <label><input type="checkbox" /> Minivan</label>
+            <label><input type="checkbox" /> Pickup Truck</label>
+            <label><input type="checkbox" /> Sedan</label>
+            <label><input type="checkbox" /> Sports Car</label>
+            <label><input type="checkbox" /> Station Wagon</label>
+            <label><input type="checkbox" /> SUV</label>
+
+            <h3>Car Seats</h3>
+            <label><input type="checkbox" /> 2 seats</label>
+            <label><input type="checkbox" /> 4 seats</label>
+            <label><input type="checkbox" /> 5 seats</label>
+            <label><input type="checkbox" /> 6 seats</label>
+            <label><input type="checkbox" /> 8 seats</label>
+
+            <h3>Car Engine Capacity (cc)</h3>
+            <label><input type="checkbox" /> 1000</label>
+            <label><input type="checkbox" /> 2000</label>
+            <label><input type="checkbox" /> 3000</label>
+            <label><input type="checkbox" /> 4000</label>
+            <label><input type="checkbox" /> 5000</label>
+            <label><input type="checkbox" /> 6000</label>
+        </div>
+        
+        <div class="main-content">
+            <!-- Cars will be dynamically inserted here -->
+        </div>
+    </div>
+</body>
+</html>
+
+
+</body>
+
+</html>
+
+
+
+
+
