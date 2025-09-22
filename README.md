@@ -199,5 +199,5 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 
 ### **📞 Contact**
 
--   **Your Name:** ranaans.pk@gmail.com
+-   **Name:** ranaans.pk@gmail.com
 -   **GitHub:** RanaAns07 https://github.com/RanaAns07
